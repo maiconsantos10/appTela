@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="./assets/icon/apibrasil.png">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="card-container">
+    <!-- Card para CEP -->
+    <ion-item>
+      <p>Consulta de CEP</p>
+      <ion-label position="floating">CEP</ion-label>
+      <ion-input 
+        [(ngModel)]="cep" 
+        (ionChange)="carregarDadosCep(cep)" 
+        placeholder="ex:00000000"
+        [maxlength]="9"
+        [minlength]="8"
+        required>
+      </ion-input>
+    </ion-item>
+    <div *ngIf="cep && (cep.length < 8 || cep.length > 9)" style="color: red; font-size: 12px;">
+      CEP deve ter entre 8 e 9 caracteres.
+    </div>
+    
+    <ion-card *ngIf="dadosCep">
+      <ion-card-header>
+        <ion-card-title>Informações do CEP</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>CEP:</strong> {{ dadosCep.cep }}</p>
+        <p><strong>Estado:</strong> {{ dadosCep.state }}</p>
+        <p><strong>Cidade:</strong> {{ dadosCep.city }}</p>
+        <p><strong>Bairro:</strong> {{ dadosCep.neighborhood }}</p>
+        <p><strong>Rua:</strong> {{ dadosCep.street }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

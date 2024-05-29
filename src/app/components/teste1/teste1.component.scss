@@ -1,0 +1,10 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Ajuste este valor conforme necessário para reduzir a distância */
+    padding: 16px; /* Ajuste o padding conforme necessário */
+  }
+  
+  ion-card {
+    margin: 0; /* Remover margens padrão */
+  }

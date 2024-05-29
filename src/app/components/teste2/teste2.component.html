@@ -1,0 +1,27 @@
+
+<ion-content>
+  <ion-item>
+    <p> Consulta de CNPJ </p>
+    <ion-label position="floating">CNPJ</ion-label>
+    <ion-input [(ngModel)]="cnpj" (ionChange)="carregarDadosCnpj(cnpj)" placeholder="ex:00000000000000"></ion-input>
+  </ion-item>
+  
+  <ion-card *ngIf="dadosCnpj">
+    <ion-card-header>
+      <ion-card-title>Informações do CNPJ</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>CNPJ:</strong> {{ dadosCnpj.cnpj }}</p>
+      <p><strong>Nome Fantasia:</strong> {{ dadosCnpj.nome_fantasia }}</p>
+      <p><strong>Razão Social:</strong> {{ dadosCnpj.razao_social }}</p>
+      <p><strong>Data de Abertura:</strong> {{ dadosCnpj.data_abertura }}</p>
+      <p><strong>Atividade Principal:</strong> {{ dadosCnpj.cnae_fiscal_descricao }}</p>
+      <p><strong>UF:</strong> {{ dadosCnpj.uf }}</p>
+      <p><strong>Município:</strong> {{ dadosCnpj.municipio }}</p>
+      <p><strong>Bairro:</strong> {{ dadosCnpj.bairro }}</p>
+      <p><strong>Logradouro:</strong> {{ dadosCnpj.logradouro }}</p>
+      <p><strong>Número:</strong> {{ dadosCnpj.numero }}</p>
+      <p><strong>CEP:</strong> {{ dadosCnpj.cep }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
